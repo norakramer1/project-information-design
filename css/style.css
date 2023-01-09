@@ -1,0 +1,27 @@
+
+
+@font-face {
+    font-family: 'FedraSansAltMed';
+    src: url(fonts/fedra/FedraSansAltStd-Medium.ttf);
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: FedraSansAltMed;
+}
+
+
+section.percentages {
+    background-color: #01689b;
+    padding: 5%;
+    max-width: 30%;
+}
+
+section.percentages h2 {
+    font-size: 5vw;
+}
+section.percentages h2, section.percentages h3{
+    color: white;
+}
