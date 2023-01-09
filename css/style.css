@@ -2,14 +2,14 @@
 
 @font-face {
     font-family: 'FedraSansAltMed';
-    src: url(fonts/fedra/FedraSansAltStd-Medium.ttf);
+    src: url(/fonts/fedra/FedraSansAltStd-Medium.ttf);
   }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: FedraSansAltMed;
+    font-family: 'FedraSansAltMed';
 }
 
 
