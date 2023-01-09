@@ -1,14 +1,13 @@
+ import { makePercentage } from "./countPercent.js";
 
- console.log(daoLinks)
- function makePercentage() {
-  
-   let notOnline = fileGroup - daoLinks;
-   let notOnlinePercent = notOnline / fileGroup * 100;
-   let onlinePercent = daoLinks / fileGroup * 100;
 
-//    console.log(notOnline)
-//    console.log(notOnlinePercent)
-//    console.log(onlinePercent)
+export let fileGroup = 0;
+
+export function findLinkGroups(c) {
+    
+  c.forEach(el => {
+    fileGroup++;
+  });
+ 
+   return makePercentage(fileGroup)
  }
-
- makePercentage();
