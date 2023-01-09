@@ -9,5 +9,5 @@ export function findLinkGroups(c) {
     fileGroup++;
   });
  
-   return makePercentage(fileGroup)
+   //return makePercentage(fileGroup)
  }

@@ -46,14 +46,13 @@ import  { daoLinks, findLinks } from "./findLinks.js"
 
 
   console.log('dit zijn de waardes:')
-       console.log(fileGroup)
-       console.log(daoLinks)
+    
        let notOnline = fileGroup - daoLinks;
        let notOnlinePercent = notOnline / fileGroup * 100;
        let onlinePercent = daoLinks / fileGroup * 100;
     
     //   console.log(notOnline)
-       console.log(notOnlinePercent)
+      // console.log(notOnlinePercent)
     //  console.log(onlinePercent)
     
       let section = document.querySelector('section.percentages')
