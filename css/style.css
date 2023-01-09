@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'FedraSansAltMed';
-    src: url(/fonts/fedra/FedraSansAltStd-Medium.ttf);
+    src: url(../fonts/fedra/FedraSansAltStd-Medium.ttf);
   }
 
 * {
