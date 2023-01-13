@@ -12,16 +12,28 @@
     font-family: 'FedraSansAltMed';
 }
 
+div.info {
+    display: flex;
+    flex-direction: row;
+}
+
 
 section.percentages {
+    margin-right: 5%;
     background-color: #01689b;
     padding: 5%;
     max-width: 30%;
 }
 
-section.percentages h2 {
+section.public {
+    background-color: #e17000;
+    padding: 5%;
+    max-width: 30%;
+}
+
+section.percentages h2, section.public h2 {
     font-size: 5vw;
 }
-section.percentages h2, section.percentages h3{
+section.percentages h2, section.percentages h3, section.public h2, section.public h3{
     color: white;
 }
