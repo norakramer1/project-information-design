@@ -21,9 +21,11 @@ var svg = d3.select("#my_dataviz")
 export function makeBars(data) {
 const occurrences = data.reduce(function (acc, curr) {
   return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
-}, {});
+  
+}, []);
 
 console.log(occurrences)
+
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
@@ -37,21 +39,21 @@ svg.append("g")
     .style("text-anchor", "end");
 
 // Add Y axis
-var y = d3.scaleLinear()
-  .domain([0, 13000])
+var y = d3.scaleLinear(occurrences)
+  .domain([0, 50])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
 
 // Bars
 svg.selectAll("mybar")
-  .data(data)
+  .data(occurrences)
   .enter()
   .append("rect")
-    .attr("x", function(d) { return x(d.Country); })
-    .attr("y", function(d) { return y(d.Value); })
+     .attr("x", function(d) { return x(d); })
+    .attr("y", function(d) { return y(d); })
     .attr("width", x.bandwidth())
-    .attr("height", function(d) { return height - y(d.Value); })
-    .attr("fill", "#69b3a2")
+    .attr("height", function(d) { return height - y(d); })
+    .attr("fill", "#01689b")
 
 }
