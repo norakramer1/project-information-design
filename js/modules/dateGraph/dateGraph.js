@@ -1,3 +1,4 @@
+import { makeBars } from "../D3/barchart.js";
 
 
 export function dateGraph(dates) {
@@ -13,17 +14,27 @@ export function dateGraph(dates) {
     })
     console.log(answers)
 
-    const regex = new RegExp(/^([0-9]{4})?$/);
-const str = "oudste stuk - jongste stuk: 1594-1603";
+    const regex = new RegExp(/\D/g,'');
    // console.log(regex)
   
-   let newStr = str.replace(/\D/g,'');
+  
     const matches = answers.map(answer => answer.replace(/\D/g,''));
+    
+
+    const firstFour = matches.map(item => item.slice(0,4));
    //const matches = answers.match(regex);
-    console.log(matches);
+    console.log(firstFour);
+
+    // if (item.length < 1) {
+    //   item . remove
+    // } else {
+
+    // }
+
+    makeBars(firstFour)
     
    // console.log(something)
 
 }
 
-// REGEX: 
+// REGEX:

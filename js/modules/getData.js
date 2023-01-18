@@ -23,7 +23,7 @@ export function getData() {
          let parser = new DOMParser();
          let xml = parser.parseFromString(data, "application/xml");
          // PRINT XML FILE ON PAGE
-         document.getElementById('output').textContent = data;
+        // document.getElementById('output').textContent = data;
 
          //LINK GROUP 
          let linkGroups = Array.from(xml.getElementsByTagName('c'));
