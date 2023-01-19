@@ -19,17 +19,18 @@ var svg = d3.select("#my_dataviz")
 
 // COUNT OCCURENCES OF NUMBERS: https://stackoverflow.com/questions/5667888/counting-the-occurrences-frequency-of-array-elements
 export function makeBars(data) {
-const occurrences = data.reduce(function (acc, curr) {
-  return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+  console.log(data)
+// const occurrences = data.reduce(function (acc, curr) {
+//   return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
   
-}, []);
+// }, []);
 
-console.log(occurrences)
+// console.log(occurrences)
 
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
-  .domain(occurrences)
+  .domain(data.year)
   .padding(0.2);
 svg.append("g")
   .attr("transform", "translate(0," + height + ")")

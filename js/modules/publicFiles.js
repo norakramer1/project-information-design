@@ -1,13 +1,13 @@
 import  { getData } from "./getData.js"
 
-export function findLinkGroups(c) {
+// export function findLinkGroups(c) {
     
-    c.forEach(el => {
-      fileGroup++;
-    });
+//     c.forEach(el => {
+//       fileGroup++;
+//     });
    
-     //return makePercentage(fileGroup)
-   }
+//      //return makePercentage(fileGroup)
+//    }
 
 export function renderPublic(x) {
     let publicfile = 0;

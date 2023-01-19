@@ -1,7 +1,8 @@
 import { findLinkGroups } from "./makeNumber.js";
 import { findLinks } from "./findLinks.js";
 import { renderPublic } from "./publicFiles.js";
-import { dateGraph } from "./dateGraph/dateGraph.js";
+import { findDate } from "./dateGraph/dateGraph.js";
+import { makeBars } from "./D3/barChart.js";
 
 
 
@@ -23,7 +24,7 @@ export function getData() {
          let parser = new DOMParser();
          let xml = parser.parseFromString(data, "application/xml");
          // PRINT XML FILE ON PAGE
-        // document.getElementById('output').textContent = data;
+         document.getElementById('output').textContent = data;
 
          //LINK GROUP 
          let linkGroups = Array.from(xml.getElementsByTagName('c'));
@@ -32,7 +33,36 @@ export function getData() {
          let dates = Array.from(xml.getElementsByTagName('unitdate'));
    
 
+         let testFilter = xml.querySelectorAll('c[level="file"] did')
 
+         let objects = [];
+
+         testFilter.forEach(item => {
+            if (!item.querySelector('unitdate')) {return false };
+            let recordObject = {};
+            recordObject.online = item.querySelector('dao') ? 1 : 0;
+            recordObject.offline = item.querySelector('dao') ? 0 : 1;
+            recordObject.year = findDate(item.querySelector('unitdate').textContent);
+            objects.push(recordObject);
+ 
+            //console.log("record", recordObject);
+         })
+         let pivot = d3.rollups(objects, v => d3.sum(v, d => d.online), d => d.year)
+         console.log("pivot", pivot)
+
+
+         var result = [];
+         objects.reduce(function(res, value) {
+           if (!res[value.year]) {
+             res[value.year] = { year: value.year, online: 0, offline: 0  };
+             result.push(res[value.year])
+           }
+           res[value.year].online += value.online;
+           res[value.year].offline += value.offline;
+           return res;
+         }, {});
+         
+         //console.log('result is: ', result)
 
          // DAO LINK
          let dao = Array.from(xml.getElementsByTagName('dao'));
@@ -41,7 +71,7 @@ export function getData() {
          findLinkGroups(filteredFiles)
          findLinks(dao)
          renderPublic(publicFiles)
-         dateGraph(dates)
+         makeBars(result)
       })
  //  )
    // Promise.all(promises).then(products => {
