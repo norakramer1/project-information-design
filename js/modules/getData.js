@@ -2,7 +2,7 @@ import { findLinkGroups } from "./makeNumber.js";
 import { findLinks } from "./findLinks.js";
 import { renderPublic } from "./publicFiles.js";
 import { findDate } from "./dateGraph/dateGraph.js";
-import { makeBars } from "./D3/barChart.js";
+import { stackedBars } from "./D3/barChart.js";
 
 
 
@@ -10,7 +10,7 @@ import { makeBars } from "./D3/barChart.js";
 
 
 export function getData() {
-   let url = "https://service.archief.nl/gaf/oai/!open_oai.OAIHandler?verb=ListRecords&set=1.04.01&metadataPrefix=oai_ead"
+   let url = "https://service.archief.nl/gaf/oai/!open_oai.OAIHandler?verb=ListRecords&set=2.01.27.02&metadataPrefix=oai_ead"
 
  //  const promises = archiveEntries.map(p =>
    //fetch the data as soon as the page has loaded
@@ -24,7 +24,7 @@ export function getData() {
          let parser = new DOMParser();
          let xml = parser.parseFromString(data, "application/xml");
          // PRINT XML FILE ON PAGE
-         document.getElementById('output').textContent = data;
+         // document.getElementById('output').textContent = data;
 
          //LINK GROUP 
          let linkGroups = Array.from(xml.getElementsByTagName('c'));
@@ -47,8 +47,8 @@ export function getData() {
  
             //console.log("record", recordObject);
          })
-         let pivot = d3.rollups(objects, v => d3.sum(v, d => d.online), d => d.year)
-         console.log("pivot", pivot)
+         //let pivot = d3.rollups(objects, v => d3.sum(v, d => d.online), d => d.year)
+        // console.log("pivot", pivot)
 
 
          var result = [];
@@ -71,7 +71,7 @@ export function getData() {
          findLinkGroups(filteredFiles)
          findLinks(dao)
          renderPublic(publicFiles)
-         makeBars(result)
+         stackedBars(result)
       })
  //  )
    // Promise.all(promises).then(products => {
