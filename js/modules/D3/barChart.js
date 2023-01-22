@@ -25,48 +25,87 @@ var svg = d3.select("#my_dataviz")
 export function stackedBars(data) {
   console.log(data)
 
-  var years = d3.map(data, function(d){return(d.year)})
 
-  // Add X axis
-  var x = d3.scaleBand()
-      .domain(years)
-      .range([0, width])
-      .padding([0.2])
-  svg.append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).tickSizeOuter(0));
+let years = data.map(function(d) { return d.year});
 
-  // Add Y axis
-  var y = d3.scaleLinear()
-    .domain([0, 60])
-    .range([ height, 0 ]);
-  svg.append("g")
-    .call(d3.axisLeft(y));
+let state = d3.keys(data[0])
+              .filter(function(key) {return key !== "year"; });
 
-let groups = ['online', 'offline']
-  // color palette = one color per subgroup
-  var color = d3.scaleOrdinal()
-    .domain(groups)
-    .range(['#e41a1c','#377eb8'])
+      
 
-  //stack the data? --> stack per subgroup
-  var stackedData = d3.stack()
-    .keys(groups)
-     (data)
+data.forEach(function(d) {
+  d.total = state.map(function(years) {
+    return { "year": years,
+              "totalCount": d[years]}
+  });
 
-  // Show the bars
-  svg.append("g")
-    .selectAll("g")
-    // Enter in the stack data = loop key per key = group per group
-    .data(stackedData)
-    .enter().append("g")
-      .attr("fill", function(d) { return color(d.key); })
-      .selectAll("rect")
-      // enter a second time = loop subgroup per subgroup to add all rectangles
-      .data(function(d) { return d; })
-      .enter().append("rect")
-        .attr("x", function(d) { return x(d.online); })
-        .attr("y", function(d) { return y(d.offine); })
-        .attr("height", function(d) { return x(d.online); })
-        .attr("width",x.bandwidth())
+  d.allTotal = d3.sum(d.total, function(d) { return d.totalCount; });
+});  
+
+var x = d3.scale.ordinal()
+        .domain(years)
+        .rangeRoundBands([0, width], 0.1);
+
+      
+var y = d3.scale.linear()
+        .domain([0, d3.max(data, function(d) {return d.allTotal;})])
+        .range([height, 0]);
+
+var color = d3.scale.ordinal()
+            .domain(state)
+            .range(["#d62728", "#e45628", "#c1c"]);
+
+var xAxis = d3.svg.axis()
+            .scale(x)
+            .orient("bottom");
+
+var yAxis = d3.svg.axis()
+            .scale(y)
+            .orient("left");
+
+var svgViewport = d3.select("#visualization").append("svg")
+                  .attr("width", width + margin.left + margin.right)
+                  .attr("height", height + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svgViewport.append("g")
+           .attr("class", "x axis")
+           .attr("transform", "translate(0," + height + ")")
+           .call(xAxis);
+
+svgViewport.append("g")
+           .attr("class", "y axis")
+           .call(yAxis);
+
+
+var layers = state.map(function(stat) {
+            return data.map(function(d) {
+              return {"x": x(d.year), "y": d[stat], "stat":stat};
+            });
+});
+
+var stack = d3.layout.stack();
+
+stack(layers);
+
+var svgLayer = svgViewport.selectAll(".layer")
+              .data(layers)
+              .enter()
+              .append("g")
+                .attr("class", "layer");
+
+var rect = svgLayer.selectAll("rect")
+            .data(function(d) {return d;})
+            .enter()
+            .append("rect")
+            .attr("x", function(d) { return d.x })
+            .attr("y", function(d) { return y(d.y + d.y0); })
+            .attr("width", x.rangeBand())
+            .attr("height", function(d, i) { return height - y(d.y); })
+            .attr("fill", function(d, i) { return color(d.stat); });
+
+  
       }
+
+
