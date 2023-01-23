@@ -5,6 +5,12 @@
     src: url(../fonts/fedra/FedraSansAltStd-Medium.ttf);
   }
 
+
+  @font-face {
+    font-family: 'FedraSansAltBook';
+    src: url(../fonts/fedra/FedraSansAltStd-Book.ttf);
+  }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -13,6 +19,20 @@
 
 }
 
+body.onderzoeken {
+    background-image: url("/img/NA-onderzoeken.png");
+    background-size: cover;
+}
+
+/* body.onderzoeken div.container {
+    height: 175px;
+    width: 400px;
+    background-color: #e17000;
+    position: absolute;
+    top: 62%;
+    left: 67%;
+} */
+
 div.info {
     display: flex;
     flex-direction: row;
@@ -20,22 +40,55 @@ div.info {
 }
 
 
-section.percentages {
-    margin-right: 5%;
+div.container {
+    /* margin-right: 5%; */
     background-color: #01689b;
-    padding: 5%;
-    max-width: 30%;
+    
+    padding: 3.3% 5% 3.3% 5%;
+     max-width: 30%; 
+     position: absolute;
+     top: 62%;
+     left: 67%;
 }
 
 section.public {
     background-color: #e17000;
     padding: 5%;
     max-width: 30%;
+ 
 }
 
-section.percentages h2, section.public h2 {
-    font-size: 5vw;
+div.container h2, section.public h2 {
+    font-size: 3vw;
 }
-section.percentages h2, section.percentages h3, section.public h2, section.public h3{
+div.container h2, div.container h3, section.public h2, section.public h3{
     color: white;
+}
+
+
+g.x-axis > path {
+    d: path('M0,1V0H280V1');
+}
+
+g.y-axis > path {
+    d: path('M-1,0H0V140H-1');
+}
+
+
+
+g.x-axis g.tick {
+    transform: translate(2,0) !important;
+}
+
+
+g.x-axis g.tick > text {
+    font-family: 'FedraSansAltBook';
+    font-size: 10px;  
+    transform: rotate(320deg); 
+    text-anchor: end !important;
+}
+
+g.y-axis g.tick > text {
+    font-family: 'FedraSansAltBook';
+    font-size: 10px;  
 }

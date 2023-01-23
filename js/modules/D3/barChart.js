@@ -1,4 +1,4 @@
-
+// https://www.youtube.com/watch?v=iEV8ZdTd2rg
 // Set margins
 const margin = {
   top: 10,
@@ -8,9 +8,9 @@ const margin = {
 }
 
 // Set dimensions for graph
-let clientWidth = window.innerWidth;
-const width = clientWidth - margin.left - margin.right;
-const height = 400 - margin.top - margin.bottom;
+//let clientWidth = window.innerWidth;
+const width = 400 - margin.left - margin.right;
+const height = 200 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#my_dataviz")
@@ -53,7 +53,7 @@ var y = d3.scale.linear()
 
 var color = d3.scale.ordinal()
             .domain(state)
-            .range(["#d62728", "#e45628", "#c1c"]);
+            .range(["#01689b", "#9ccde5"]);
 
 var xAxis = d3.svg.axis()
             .scale(x)
@@ -61,7 +61,9 @@ var xAxis = d3.svg.axis()
 
 var yAxis = d3.svg.axis()
             .scale(y)
-            .orient("left");
+            .orient("left")
+
+            
 
 var svgViewport = d3.select("#visualization").append("svg")
                   .attr("width", width + margin.left + margin.right)
@@ -70,12 +72,12 @@ var svgViewport = d3.select("#visualization").append("svg")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 svgViewport.append("g")
-           .attr("class", "x axis")
+           .attr("class", "x-axis")
            .attr("transform", "translate(0," + height + ")")
            .call(xAxis);
 
 svgViewport.append("g")
-           .attr("class", "y axis")
+           .attr("class", "y-axis")
            .call(yAxis);
 
 
@@ -94,6 +96,8 @@ var svgLayer = svgViewport.selectAll(".layer")
               .enter()
               .append("g")
                 .attr("class", "layer");
+
+
 
 var rect = svgLayer.selectAll("rect")
             .data(function(d) {return d;})
