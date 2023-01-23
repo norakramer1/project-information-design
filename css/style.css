@@ -57,14 +57,14 @@ div.info {
 div.container {
     /* margin-right: 5%; */
     background-color: #ffffff;
-    margin-top: 50%
-    height: 175px;
+    margin-top: 27%;
+    height: 260px;
     width: 400px;
     padding: 2%;
      /* max-width: 30%;  */
      position: absolute;
-     top: 62%;
-     left: 67%;
+     top: 380px;
+     left: 865px;
 }
 
 section.public {
@@ -74,7 +74,12 @@ section.public {
  
 }
 
-div.container h2, section.public h2 {
+div.container h2 {
+font-size: 16px;
+padding-bottom: 8px;
+}
+
+ section.public h2 {
     font-size: 2vw;
 }
 div.container h2, div.container h3,div.container p , section.public h2, section.public h3{
@@ -131,11 +136,12 @@ g.y-axis g.tick > text {
 }
  
 p {
-    font-size: 17px;
+    font-size: 16px;
     font-family: 'MarkProRegular';
-    font-size: 12px;
 }
 
-h3.percent {
-    font-size: 30px;
+div.container h3.percent {
+    font-weight: 500;
+    font-size: 40px;
+    color:#01689b;
 }
