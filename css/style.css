@@ -11,6 +11,14 @@
     src: url(../fonts/fedra/FedraSansAltStd-Book.ttf);
   }
 
+  @font-face {
+    font-family: 'MarkProRegular';
+    src: url(../fonts/FFMarkPro/FontFontMarkPro.otf);
+  }
+
+
+  /* fonts/FF Mark Pro/FontFont - Mark Pro.otf */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -42,10 +50,11 @@ div.info {
 
 div.container {
     /* margin-right: 5%; */
-    background-color: #01689b;
-    
-    padding: 3.3% 5% 3.3% 5%;
-     max-width: 30%; 
+    background-color: #ffffff;
+    height: 175px;
+    width: 400px;
+    padding: 2%;
+     /* max-width: 30%;  */
      position: absolute;
      top: 62%;
      left: 67%;
@@ -59,12 +68,33 @@ section.public {
 }
 
 div.container h2, section.public h2 {
-    font-size: 3vw;
+    font-size: 2vw;
 }
-div.container h2, div.container h3, section.public h2, section.public h3{
-    color: white;
+div.container h2, div.container h3,div.container p , section.public h2, section.public h3{
+    color: #4b4646;
 }
 
+hr.solid {
+    margin-top: 5%;
+    border-top: 1px solid #4b4646;
+    text-decoration: none;
+  }
+
+  progress[value] {
+    appearance: none;
+    margin-top: 2%;
+    width: 100%;
+    height: 20px;
+    color: #01689b;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: #EFEFEA;
+}
+progress::-webkit-progress-value {
+    background-color: #01689b;
+    
+}
 
 g.x-axis > path {
     d: path('M0,1V0H280V1');
@@ -91,4 +121,14 @@ g.x-axis g.tick > text {
 g.y-axis g.tick > text {
     font-family: 'FedraSansAltBook';
     font-size: 10px;  
+}
+ 
+p {
+    font-size: 17px;
+    font-family: 'MarkProRegular';
+    font-size: 12px;
+}
+
+h3.percent {
+    font-size: 30px;
 }

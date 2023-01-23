@@ -22,11 +22,16 @@ import  { daoLinks, findLinks } from "./findLinks.js"
       section.insertAdjacentHTML('beforeend',
       `  
       <h2>Digitalisatie</h2>
-      <h3>${roundOnlinePercent}%</h3>    
+      <hr class="solid">
+      <h3 class="percent">${roundOnlinePercent}%</h3>  
+<progress id="file" value="${roundOnlinePercent}" max="100"> ${roundOnlinePercent}% </progress>
+    
       <p>Wij zijn druk bezig het archief te digitaliseren</p>
         `
       )
 
+      // <label for="file">Digitaal</label>
+//   // <h3>${roundOnlinePercent}%</h3>   
       // <h2>${roundOfflinePercent}%</h2>
       // <h3> van dit archief is niet beschikbaar online</h3>
      }
