@@ -17,18 +17,22 @@ import  { daoLinks, findLinks } from "./findLinks.js"
    let roundOnlinePercent = Math.round(onlinePercent);
    let roundOfflinePercent = Math.round(notOnlinePercent);
 
-    
+    if(div.container) {
       let section = document.querySelector('div.container')
       section.insertAdjacentHTML('beforeend',
       `  
+      <a href="resultaat.html">
       <h2>Digitalisatie</h2>
       <hr class="solid">
       <h3 class="percent">${roundOnlinePercent}%</h3>  
 <progress id="file" value="${roundOnlinePercent}" max="100"> ${roundOnlinePercent}% </progress>
     
       <p>Wij zijn druk bezig het archief te digitaliseren</p>
+      </a>
         `
       )
+    }
+    
 
       // <label for="file">Digitaal</label>
 //   // <h3>${roundOnlinePercent}%</h3>   

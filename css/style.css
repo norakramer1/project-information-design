@@ -27,11 +27,22 @@
 
 }
 
-
+a {
+    text-decoration: none;
+}
 
 body.onderzoeken {
     background-image: url("/img/NA-onderzoeken-nieuw.png");
     background-size: contain;
+    height: 170vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    overflow: scroll;
+}
+
+body.resultaat {
+    background-image: url("/img/NA-resultaat-nieuw.png");
+    background-size: cover;
     height: 170vh;
     width: 100vw;
     background-repeat: no-repeat;
@@ -54,7 +65,7 @@ div.info {
 }
 
 
-div.container {
+div.container, div.container-public {
     /* margin-right: 5%; */
     background-color: #ffffff;
     margin-top: 27%;
@@ -67,12 +78,12 @@ div.container {
      left: 865px;
 }
 
-section.public {
+/* section.public {
     background-color: #e17000;
     padding: 5%;
     max-width: 30%;
  
-}
+} */
 
 div.container h2 {
 font-size: 16px;
@@ -136,6 +147,7 @@ g.y-axis g.tick > text {
 }
  
 p {
+    padding-top: 10px;
     font-size: 16px;
     font-family: 'MarkProRegular';
 }

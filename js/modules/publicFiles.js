@@ -14,7 +14,10 @@ export function renderPublic(x) {
     x.forEach(el => {
         publicfile++;
       });
-    let section = document.querySelector('section.public')
+
+      console.log('section')
+    let section = document.querySelector('div.container')
+    
     section.insertAdjacentHTML('beforeend',
     `  
     <h2>${publicfile}</h2>    
