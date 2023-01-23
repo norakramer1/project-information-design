@@ -27,9 +27,15 @@
 
 }
 
+
+
 body.onderzoeken {
-    background-image: url("/img/NA-onderzoeken.png");
-    background-size: cover;
+    background-image: url("/img/NA-onderzoeken-nieuw.png");
+    background-size: contain;
+    height: 170vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    overflow: scroll;
 }
 
 /* body.onderzoeken div.container {
@@ -51,6 +57,7 @@ div.info {
 div.container {
     /* margin-right: 5%; */
     background-color: #ffffff;
+    margin-top: 50%
     height: 175px;
     width: 400px;
     padding: 2%;
