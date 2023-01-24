@@ -15,13 +15,15 @@ export function renderPublic(x) {
         publicfile++;
       });
 
-      console.log('section')
+      console.log(publicfile)
     let section = document.querySelector('div.container')
     
     section.insertAdjacentHTML('beforeend',
     `  
-    <h2>${publicfile}</h2>    
-    <h3>documenten in dit archief zijn niet openbaar</h3>
+  
       `
     )
 }
+
+// <h2>${publicfile}</h2>    
+//<h3>documenten in dit archief zijn niet openbaar</h3>

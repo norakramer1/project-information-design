@@ -16,8 +16,9 @@ import  { daoLinks, findLinks } from "./findLinks.js"
 
    let roundOnlinePercent = Math.round(onlinePercent);
    let roundOfflinePercent = Math.round(notOnlinePercent);
+   let container = document.querySelector('div.container')
 
-    if(div.container) {
+    if(container) {
       let section = document.querySelector('div.container')
       section.insertAdjacentHTML('beforeend',
       `  
