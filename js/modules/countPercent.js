@@ -6,8 +6,8 @@ export {
   roundOnlinePercent as variable,
 };
 
-
-
+// make found element numbers a percentage and round it off
+// render the elements in HTML if the div.container el exists
 function makePercentage() {
   let notOnline = fileGroup - daoLinks;
   let notOnlinePercent = notOnline / fileGroup * 100;

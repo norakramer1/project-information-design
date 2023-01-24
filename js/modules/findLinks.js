@@ -1,5 +1,6 @@
  import { makePercentage } from "./countPercent.js";
 
+// find and count the links to other xml files
  export let daoLinks = 0;
 
  export function findLinks(x) {

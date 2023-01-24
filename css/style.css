@@ -16,9 +16,6 @@
     src: url(../fonts/FFMarkPro/FontFontMarkPro.otf);
   }
 
-
-  /* fonts/FF Mark Pro/FontFont - Mark Pro.otf */
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -70,15 +67,6 @@ body.serie > div.container-public {
     left: 830px;
 }
 
-/* body.onderzoeken div.container {
-    height: 175px;
-    width: 400px;
-    background-color: #e17000;
-    position: absolute;
-    top: 62%;
-    left: 67%;
-} */
-
 div.info {
     display: flex;
     flex-direction: row;
@@ -123,7 +111,7 @@ div.container h2, div.container h3,div.container p , section.public h2, section.
 
 hr.solid {
     margin-top: 5%;
-    border-top: 1px solid #4b4646;
+    border-top: 0.1px solid #4b4646;
     text-decoration: none;
   }
 
@@ -144,7 +132,7 @@ progress::-webkit-progress-value {
 }
 
 g.x-axis > path {
-    d: path('M0,1V0H280V1');
+    d: path('M0,1V0H330V1');
 }
 
 g.y-axis > path {
@@ -177,7 +165,8 @@ p {
 }
 
 div.container h3.percent {
-    font-weight: 500;
+    padding-top: 10%;
+    font-weight: 600;
     font-size: 40px;
     color:#01689b;
 }

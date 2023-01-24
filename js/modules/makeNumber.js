@@ -1,4 +1,3 @@
- //import { makePercentage } from "./countPercent.js";
 
 export let fileGroup = 0;
 export function findLinkGroups(c) {
@@ -7,5 +6,4 @@ export function findLinkGroups(c) {
     fileGroup++;
   });
  
-   //return makePercentage(fileGroup)
  }

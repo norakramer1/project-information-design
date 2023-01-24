@@ -30,11 +30,14 @@ All data from Nationaal Archief is available via Open Data. Using OAI-PMH you ca
 1. Fetch XML files 
 2. Show user how much of the particular archive is digitalised
 3. Show user how many files are publicly available
-4. Show the user a graph with how much information is digitalised in a certain time period
+4. Show the user a graph with how much information is digitalised and not digitalised in a certain time period
 
 ## Wishlist
 1. Show a percentage that shows how much data is available across all XML/archives in the website
 2. Optimise the chart to represent the design made
+3. Make a tooltip on the bar chart to show an accurate number (started)
+4. Clean up modules
+5. Make a button that lets you enter a different archive number (for demonstration purposes)
 
 ## License
 This project uses the MIT license
