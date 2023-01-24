@@ -32,7 +32,7 @@ a {
 }
 
 body.onderzoeken {
-    background-image: url("/img/NA-onderzoeken-nieuw.png");
+    background-image: url("../img/NA-onderzoeken-nieuw.png");
     background-size: contain;
     height: 170vh;
     width: 100vw;
@@ -41,7 +41,7 @@ body.onderzoeken {
 }
 
 body.resultaat {
-    background-image: url("/img/NA-resultaat-nieuw.png");
+    background-image: url("../img/NA-resultaat-nieuw.png");
     background-size: cover;
     height: 170vh;
     width: 100vw;
@@ -50,7 +50,7 @@ body.resultaat {
 }
 
 body.serie {
-    background-image: url("/img/NA-detail.png");
+    background-image: url("../img/NA-serie-nieuw.png");
     background-size: cover;
     height: 170vh;
     width: 100vw;
@@ -60,14 +60,13 @@ body.serie {
 
 body.serie > div#visualization {
     position: absolute;
-    top: 420px;
+    top: 380px;
     left: 800px;
 }
 
 body.serie > div.container-public {
-    background-color: #ffffff;
     position: absolute;
-    top: -150px;
+    top: -200px;
     left: 830px;
 }
 
