@@ -49,6 +49,15 @@ body.resultaat {
     overflow: scroll;
 }
 
+body.home {
+    background-image: url("/img/NA-onderzoeken-nieuw.png");
+    background-size: cover;
+    height: 170vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    overflow: scroll;
+}
+
 /* body.onderzoeken div.container {
     height: 175px;
     width: 400px;
@@ -65,7 +74,7 @@ div.info {
 }
 
 
-div.container, div.container-public {
+div.container {
     /* margin-right: 5%; */
     background-color: #ffffff;
     margin-top: 27%;
@@ -76,6 +85,17 @@ div.container, div.container-public {
      position: absolute;
      top: 380px;
      left: 865px;
+}
+
+div.container-public {
+   /* background-color: #ffffff;  */
+    margin-top: 40%;
+    height: 260px;
+    width: 400px;
+    padding: 2%;
+     position: absolute;
+     /* top: 380px;
+     left: 865px; */
 }
 
 /* section.public {

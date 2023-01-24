@@ -1,13 +1,5 @@
 import  { getData } from "./getData.js"
-
-// export function findLinkGroups(c) {
-    
-//     c.forEach(el => {
-//       fileGroup++;
-//     });
-   
-//      //return makePercentage(fileGroup)
-//    }
+import { roundOnlinePercent as roundOnlinePercent } from "./countPercent.js";
 
 export function renderPublic(x) {
     let publicfile = 0;
@@ -15,15 +7,23 @@ export function renderPublic(x) {
         publicfile++;
       });
 
-      console.log(publicfile)
-    let section = document.querySelector('div.container')
-    
-    section.insertAdjacentHTML('beforeend',
-    `  
-  
-      `
-    )
+
+      var elementBars =  document.querySelector('div.container-public');
+      if (typeof(elementBars) != 'undefined' && elementBars != null)
+      {
+        let section = document.querySelector('div.container-public')
+        section.insertAdjacentHTML('beforeend',
+        `  
+      
+        <progress id="file" value="${publicfile}" max="100"> ${publicfile}% </progress>
+        <p>${publicfile} stukken in dit archief zijn niet openbaar</p>   
+        <progress id="file" value="${roundOnlinePercent}" max="100"> ${roundOnlinePercent}% </progress> 
+          `
+        )
+      }
+
 }
 
-// <h2>${publicfile}</h2>    
+
+//<h2>${publicfile}</h2>    
 //<h3>documenten in dit archief zijn niet openbaar</h3>
