@@ -15,7 +15,7 @@ The team ended up making the decision to show different data available in the ar
 ## Activity diagram
 To explain what code is used where and how different functions call each other I made this (sort of) activity diagram. These functions dont get called if you open the page (they fire all at once), but it is more to show the structure of which functions are used where and on which page. 
 
-![img/Flowchart.jpg](https://user-images.githubusercontent.com/Flowchart.jpg)
+![Flowchart](https://user-images.githubusercontent.com/74241562/214337683-83701c80-9a19-4bd7-8aa5-8de13f5ed835.jpg)
 
 ### The home page
 The home page shows a small block of content that explains that Nationaal Archief is busy digitilizing their materials but that this is going to take a long time. It shows a barchart and percentage of the materials that are available on their website. 
