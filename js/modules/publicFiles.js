@@ -14,7 +14,7 @@ export function renderPublic(x) {
         let section = document.querySelector('div.container-public')
         section.insertAdjacentHTML('beforeend',
         `  
-        <a href="resultaat.html">
+        <a href="serie.html">
         <progress id="file" value="${publicfile}" max="100"> ${publicfile}% </progress>
         <p>${publicfile} stukken in dit archief zijn niet openbaar</p>  
         <progress id="file" value="${roundOnlinePercent}" max="100"> ${roundOnlinePercent}% </progress>  
