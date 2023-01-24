@@ -49,8 +49,8 @@ body.resultaat {
     overflow: scroll;
 }
 
-body.home {
-    background-image: url("/img/NA-onderzoeken-nieuw.png");
+body.serie {
+    background-image: url("/img/NA-detail.png");
     background-size: cover;
     height: 170vh;
     width: 100vw;
@@ -89,21 +89,13 @@ div.container {
 
 div.container-public {
    /* background-color: #ffffff;  */
-    margin-top: 40%;
+    margin-top: 35%;
     height: 260px;
     width: 400px;
     padding: 2%;
-     position: absolute;
-     /* top: 380px;
-     left: 865px; */
+    position: absolute;
 }
 
-/* section.public {
-    background-color: #e17000;
-    padding: 5%;
-    max-width: 30%;
- 
-} */
 
 div.container h2 {
 font-size: 16px;
