@@ -1,6 +1,8 @@
 # project-information-design
 Final Project of the minor Information Design in collaboration with Nationaal Archief
 
+> Process and week by week documentation can be found in the wiki of this repo
+
 ![screencapture-norakramer1-github-io-project-information-design-serie-html-2023-01-24-16_02_24](https://user-images.githubusercontent.com/74241562/214329573-39034033-0127-4208-b420-6e152a2c2151.png)
 
 
